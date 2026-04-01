@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Training Architect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="app-shell">
+    <header class="hero glass">
+      <div class="hero-copy">
+        <div class="eyebrow">Elite Training Architect</div>
+        <h1>App de treino premium com personalização de verdade.</h1>
+        <p>
+          Perfil, objetivo, limitações, tempo, equipamentos e prioridades físicas entram na lógica para montar uma ficha que parece ter sido criada por um personal de elite.
+        </p>
+        <div class="hero-actions">
+          <button id="startBtn" class="btn btn-primary">Começar avaliação</button>
+          <button id="resetBtn" class="btn btn-secondary">Reiniciar</button>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card glass-soft">
+          <span>Personalização</span>
+          <strong>Real</strong>
+          <small>Objetivo, dores, nível e academia entram de verdade</small>
+        </div>
+        <div class="stat-card glass-soft">
+          <span>Execução</span>
+          <strong>Guiada</strong>
+          <small>Exercícios com visual, erros e dicas técnicas</small>
+        </div>
+        <div class="stat-card glass-soft">
+          <span>Sensação</span>
+          <strong>Premium</strong>
+          <small>Produto pronto para parecer caro e profissional</small>
+        </div>
+      </div>
+    </header>
+
+    <section class="wizard glass">
+      <div class="wizard-top">
+        <div>
+          <div class="section-tag">Fluxo do usuário</div>
+          <h2>Monte o perfil do aluno e gere o plano.</h2>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-bar"><div id="progressFill"></div></div>
+          <div id="progressText">Etapa 1 de 4</div>
+        </div>
+      </div>
+
+      <nav class="steps-nav">
+        <button class="step-chip active" data-step="0">1. Introdução</button>
+        <button class="step-chip" data-step="1">2. Perfil</button>
+        <button class="step-chip" data-step="2">3. Preferências</button>
+        <button class="step-chip" data-step="3">4. Plano</button>
+      </nav>
+
+      <div id="step-0" class="step-panel active">
+        <div class="intro-grid">
+          <article class="feature-box glass-soft">
+            <h3>Leitura profunda do usuário</h3>
+            <p>Sexo, idade, peso, objetivo, frequência, dores e confiança de execução alteram volume, seleção e progressão.</p>
+          </article>
+          <article class="feature-box glass-soft">
+            <h3>Treino não genérico</h3>
+            <p>Quem treina 3 dias recebe uma lógica diferente de quem treina 6. Equipamentos e prioridades mudam o desenho do plano.</p>
+          </article>
+          <article class="feature-box glass-soft">
+            <h3>Execução visual</h3>
+            <p>Cada exercício vem com instrução de movimento, erros comuns, dica técnica e espaço premium para mídia demonstrativa.</p>
+          </article>
+        </div>
+        <div class="actions-row">
+          <button class="btn btn-primary next-btn" data-next="1">Avançar para o perfil</button>
+        </div>
+      </div>
+
+      <div id="step-1" class="step-panel">
+        <div class="form-grid">
+          <label><span>Nome</span><input id="name" type="text" placeholder="Seu nome" /></label>
+          <label><span>Sexo</span>
+            <select id="sex">
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
+          </label>
+          <label><span>Idade</span><input id="age" type="number" placeholder="29" /></label>
+          <label><span>Altura (cm)</span><input id="height" type="number" placeholder="180" /></label>
+          <label><span>Peso (kg)</span><input id="weight" type="number" step="0.1" placeholder="85.8" /></label>
+          <label><span>Nível</span>
+            <select id="level">
+              <option value="iniciante">Iniciante</option>
+              <option value="intermediário" selected>Intermediário</option>
+              <option value="avançado">Avançado</option>
+            </select>
+          </label>
+          <label><span>Meses de treino</span><input id="experienceMonths" type="number" value="12" /></label>
+          <label><span>Objetivo principal</span>
+            <select id="goal">
+              <option>Emagrecimento</option>
+              <option selected>Hipertrofia</option>
+              <option>Recomposição corporal</option>
+              <option>Ganho de força</option>
+              <option>Condicionamento</option>
+              <option>Foco estético</option>
+            </select>
+          </label>
+          <label><span>Dias por semana</span>
+            <select id="daysPerWeek">
+              <option>3</option>
+              <option>4</option>
+              <option selected>5</option>
+              <option>6</option>
+            </select>
+          </label>
+          <label><span>Minutos por treino</span>
+            <select id="minutesPerWorkout">
+              <option>40</option>
+              <option>45</option>
+              <option selected>60</option>
+              <option>75</option>
+              <option>90</option>
+            </select>
+          </label>
+          <label><span>Nível de cardio</span>
+            <select id="cardioLevel">
+              <option>baixo</option>
+              <option selected>médio</option>
+              <option>alto</option>
+            </select>
+          </label>
+          <label><span>Histórico sedentário</span>
+            <select id="sedentaryHistory">
+              <option value="não" selected>Não</option>
+              <option value="sim">Sim</option>
+            </select>
+          </label>
+          <label class="span-2"><span>Dores ou limitações</span><input id="pain" type="text" placeholder="Ex.: joelho, lombar, ombro" /></label>
+          <label class="span-2"><span>Lesões prévias</span><input id="injury" type="text" placeholder="Ex.: hérnia, tendinite, nenhuma" /></label>
+          <label><span>Mobilidade</span>
+            <select id="mobility">
+              <option>baixa</option>
+              <option selected>moderada</option>
+              <option>boa</option>
+            </select>
+          </label>
+          <label class="span-3"><span>Meta visual / foco estético</span><textarea id="aestheticFocus" rows="4">melhorar definição geral e aparência atlética</textarea></label>
+        </div>
+        <div class="actions-row">
+          <button class="btn btn-secondary prev-btn" data-prev="0">Voltar</button>
+          <button class="btn btn-primary next-btn" data-next="2">Próximo</button>
+        </div>
+      </div>
+
+      <div id="step-2" class="step-panel">
+        <div class="preferences-layout">
+          <div class="pref-col glass-soft">
+            <h3>Preferências estratégicas</h3>
+            <div class="form-grid compact">
+              <label><span>Estilo de treino</span>
+                <select id="preferenceStyle">
+                  <option>técnico</option>
+                  <option selected>intenso</option>
+                  <option>prático</option>
+                  <option>curto</option>
+                </select>
+              </label>
+              <label><span>Confiança na execução</span>
+                <select id="confidence">
+                  <option>baixa</option>
+                  <option selected>média</option>
+                  <option>alta</option>
+                </select>
+              </label>
+              <label><span>Academia</span>
+                <select id="gymType">
+                  <option selected>completa</option>
+                  <option>limitada</option>
+                </select>
+              </label>
+              <label><span>Preferência de ferramentas</span>
+                <select id="preferredTool">
+                  <option>máquinas</option>
+                  <option>pesos livres</option>
+                  <option selected>misto</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="pill-section">
+              <h4>Grupos prioritários</h4>
+              <div id="priorityMuscles" class="pill-wrap"></div>
+            </div>
+            <div class="pill-section">
+              <h4>Exercícios / recursos que você gosta</h4>
+              <div id="likes" class="pill-wrap"></div>
+            </div>
+            <div class="pill-section">
+              <h4>O que quer evitar</h4>
+              <div id="dislikes" class="pill-wrap"></div>
+            </div>
+          </div>
+
+          <div class="pref-col glass-soft">
+            <h3>Equipamentos disponíveis</h3>
+            <div id="equipmentList" class="check-grid"></div>
+          </div>
+        </div>
+        <div class="actions-row">
+          <button class="btn btn-secondary prev-btn" data-prev="1">Voltar</button>
+          <button id="generateBtn" class="btn btn-primary">Gerar plano</button>
+        </div>
+      </div>
+
+      <div id="step-3" class="step-panel">
+        <div class="dashboard-head glass-soft">
+          <div>
+            <div class="section-tag">Plano gerado</div>
+            <h2 id="planHeadline">Seu plano personalizado está pronto.</h2>
+            <p id="profileRead" class="muted"></p>
+          </div>
+          <div class="mini-panel">
+            <div><span>Nível</span><strong id="readLevel">—</strong></div>
+            <div><span>Objetivo</span><strong id="readGoal">—</strong></div>
+            <div><span>Frequência</span><strong id="readDays">—</strong></div>
+            <div><span>Duração</span><strong id="readMinutes">—</strong></div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <aside class="days-sidebar glass-soft">
+            <h3>Treinos da semana</h3>
+            <div id="daysList" class="days-list"></div>
+            <div class="coach-box">
+              <h4>Cardio estratégico</h4>
+              <p id="cardioStrategy"></p>
+            </div>
+          </aside>
+
+          <main class="main-plan">
+            <section class="day-overview glass-soft">
+              <div class="overview-top">
+                <div>
+                  <h3 id="dayTitle">—</h3>
+                  <p id="dayFocus" class="muted">—</p>
+                </div>
+                <div class="intensity-badge">Intensidade <strong id="dayIntensity">—</strong></div>
+              </div>
+              <div class="overview-cards">
+                <article>
+                  <span>Aquecimento</span>
+                  <p id="dayWarmup"></p>
+                </article>
+                <article>
+                  <span>Resumo do treinador</span>
+                  <p id="dayCoachSummary"></p>
+                </article>
+                <article>
+                  <span>Progressão</span>
+                  <p id="progression"></p>
+                </article>
+              </div>
+            </section>
+
+            <section class="weekly-volume glass-soft">
+              <h3>Volume semanal por grupo muscular</h3>
+              <div id="weeklyVolumeList"></div>
+            </section>
+
+            <section>
+              <h3 class="exercise-title">Exercícios do dia</h3>
+              <div id="exerciseList" class="exercise-list"></div>
+            </section>
+          </main>
+        </div>
+
+        <div class="actions-row">
+          <button class="btn btn-secondary prev-btn" data-prev="2">Voltar</button>
+          <button class="btn btn-primary" id="regenerateBtn">Regenerar plano</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <div id="demoModal" class="demo-modal hidden">
+    <div class="demo-backdrop" id="demoBackdrop"></div>
+    <div class="demo-panel glass">
+      <button id="closeDemo" class="close-demo">×</button>
+      <div class="demo-panel-grid">
+        <div class="demo-stage-wrap">
+          <div class="demo-stage" id="demoStage"></div>
+        </div>
+        <div class="demo-copy">
+          <div class="section-tag">Guia do movimento</div>
+          <h3 id="demoTitle">Exercício</h3>
+          <p id="demoPrimary" class="muted"></p>
+          <div class="demo-detail-block">
+            <strong>Como executar</strong>
+            <p id="demoVisual"></p>
+          </div>
+          <div class="demo-detail-block">
+            <strong>Dica técnica</strong>
+            <p id="demoTip"></p>
+          </div>
+          <div class="demo-detail-block">
+            <strong>Erros comuns</strong>
+            <p id="demoErrors"></p>
+          </div>
+          <div class="demo-detail-block success">
+            <strong>Objetivo do movimento</strong>
+            <p>Use este guia como orientação visual rápida para lembrar postura, direção do esforço e ritmo de execução.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
